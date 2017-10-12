@@ -70,6 +70,9 @@ class Index extends Controller
         //实例化获取腾讯当日开盘价的类并获取
         $shares = new Shares();
         $res = $shares->getShares();
+        if(!$res){
+            $res = '获取失败';
+        }
 
         //获取今日日期
         $time = date("Y-m-d", time());
@@ -80,15 +83,11 @@ class Index extends Controller
         foreach ($str as $key => $value){
             $str[$key] = abs(intval(hexdec($value)));
         }
-        $this->row = $str[0] % 20;
-        if($this->row===0){
-            $this->row++;
-        }
+        $this->row = $str[0] % 19 + 1;
+
         $offset = $this->seat[$this->row] + 1;
-        $this->column = $str[1] % $offset;
-        if($this->column===0){
-            $this->column ++;
-        }
+        $this->column = $str[1] % ($offset - 1) + 1;
+
 
         return $this->fetch('', [
             'row' => $this->row,
