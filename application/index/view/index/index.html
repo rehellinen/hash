@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>哈希</title>
+
+    <!-- Bootstrap -->
+    <link href="/fix/hash/public/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="container">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron" style="margin-top: 50px">
+        <h1>幽会地点生成</h1>
+        <br />
+        <p>今日腾讯开市股价为：{$shares}</p>
+        <p>今日日期为：{$time}</p>
+        <p>第{$row}行，第{$column}列</p>
+        <br />
+        <p>
+            <a class="btn btn-lg btn-primary" type="button" id="detail" attr-row="{$row}" attr-column="{$column}">点击查看详情</a>
+        </p>
+    </div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/fix/hash/public/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/fix/hash/public/static/layer/layer.js"></script>
+<script src="/fix/hash/public/static/common.js"></script>
+
+</body>
+</html>
